@@ -4,9 +4,16 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
+RUN pip3 install gunicorn
 
 COPY . .
 
 EXPOSE 80
 
-ENTRYPOINT [ "python3", "/app/appFlask/src/app.py"]
+WORKDIR /app/appFlask/src
+
+COPY entrypoint.sh .
+#ENTRYPOINT [ "python3", "/app/appFlask/src/app.py"]
+ENTRYPOINT ["./entrypoint.sh"]
+# cmd arrancar gunicorn
+#CMD ["gunicorn"," --bind=0.0.0.0:80 app:app"]
