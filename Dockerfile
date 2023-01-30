@@ -14,6 +14,6 @@ WORKDIR /app/appFlask/src
 
 COPY entrypoint.sh .
 #ENTRYPOINT [ "python3", "/app/appFlask/src/app.py"]
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["./entrypoint.sh"]
 # cmd arrancar gunicorn
 #CMD ["gunicorn"," --bind=0.0.0.0:80 app:app"]
