@@ -9,4 +9,3 @@ database = mysql.connector.connect( # LLAMAMOS AL FUNCION CONNECT PARA CONECTARN
     database='bqxo2nyaltlkfb7xfuft'
 ) 
 
-print(database)
