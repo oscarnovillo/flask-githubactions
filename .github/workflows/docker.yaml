@@ -53,5 +53,7 @@ jobs:
           #tags: ${{ steps.meta.outputs.tags }} 
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: '${{ secrets.REGISTRY_USERNAME }}/flask-server:latest'
+          tags: | 
+             '${{ secrets.REGISTRY_USERNAME }}/flask-server:latest'
+             '${{ secrets.REGISTRY_USERNAME }}/flask-server:${{ env.VERSION }}'
             
